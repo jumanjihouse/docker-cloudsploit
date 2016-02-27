@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+
+say() {
+  echo
+  echo '====>' $@
+}
+
+say Fetch upstream source.
+git submodule update --init
+git submodule foreach git reset --hard
+
+say Patch upstream source.
+patch -p1 src/scans/index.js < src/index.js.patch
+
+say Build Docker image.
+docker build --rm -t cloudsploit src/
+
+say Clean upstream source.
+git submodule foreach git reset --hard
+
+say Image Size
+docker images | egrep -i '(size|cloudsploit)'

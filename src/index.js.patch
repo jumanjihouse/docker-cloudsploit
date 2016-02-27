@@ -1,0 +1,22 @@
+--- scans/index.js.orig	2016-02-27 17:04:50.649922283 +0000
++++ scans/index.js	2016-02-27 17:12:54.797459902 +0000
+@@ -1,13 +1,11 @@
+ var async = require('async');
+ 
+-// var AWSConfig = {
+-//     accessKeyId: '',
+-//     secretAccessKey: '',
+-//     sessionToken: '',
+-//     region: 'us-east-1'
+-// };
+-
+-var AWSConfig = require(__dirname + '/../../cloudsploit-secure/scan-test-credentials.json');
++var AWSConfig = {
++    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
++    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
++    sessionToken: process.env.AWS_SESSION_TOKEN,
++    region: process.env.AWS_DEFAULT_REGION
++};
+ 
+ var plugins = [
+     'iam/rootAccountSecurity.js',

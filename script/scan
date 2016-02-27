@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+fail() {
+  echo $@
+  exit 1
+}
+
+credfile=credentials.env
+[ -r ${credfile} ] || fail Missing ${credfile}
+
+docker run --rm --env-file ${credfile} cloudsploit
