@@ -12,3 +12,8 @@
   run docker run --entrypoint npm cloudsploit list -g
   [[ ${output} =~ cloudsploit ]]
 }
+
+@test "processes run as \"user\"" {
+  run docker run --entrypoint id cloudsploit
+  [[ ${output} =~ user ]]
+}
