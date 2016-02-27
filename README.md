@@ -12,6 +12,10 @@ Overview
 This project builds and runs the scanner from a Docker container
 but is **not associated with Cloudsploit** in any way.
 
+[![Image Size](https://img.shields.io/imagelayers/image-size/jumanjiman/cloudsploit/latest.svg)](https://imagelayers.io/?images=jumanjiman/cloudsploit:latest 'View image size and layers')&nbsp;
+[![Image Layers](https://img.shields.io/imagelayers/layers/jumanjiman/cloudsploit/latest.svg)](https://imagelayers.io/?images=jumanjiman/cloudsploit:latest 'View image size and layers')&nbsp;
+[![Docker Registry](https://img.shields.io/docker/pulls/jumanjiman/cloudsploit.svg)](https://registry.hub.docker.com/u/jumanjiman/cloudsploit)&nbsp;
+
 Project URL: [https://github.com/jumanjihouse/docker-cloudsploit](https://github.com/jumanjihouse/docker-cloudsploit)
 <br />
 Docker hub: [https://registry.hub.docker.com/u/jumanjiman/cloudsploit/](https://registry.hub.docker.com/u/jumanjiman/cloudsploit/)
