@@ -9,4 +9,4 @@ fail() {
 credfile=credentials.env
 [ -r ${credfile} ] || fail Missing ${credfile}
 
-docker run --rm --env-file ${credfile} cloudsploit
+docker run --rm --read-only --env-file ${credfile} cloudsploit
