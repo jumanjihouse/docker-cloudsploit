@@ -15,6 +15,7 @@ but is **not associated with Cloudsploit** in any way.
 [![Image Size](https://img.shields.io/imagelayers/image-size/jumanjiman/cloudsploit/latest.svg)](https://imagelayers.io/?images=jumanjiman/cloudsploit:latest 'View image size and layers')&nbsp;
 [![Image Layers](https://img.shields.io/imagelayers/layers/jumanjiman/cloudsploit/latest.svg)](https://imagelayers.io/?images=jumanjiman/cloudsploit:latest 'View image size and layers')&nbsp;
 [![Docker Registry](https://img.shields.io/docker/pulls/jumanjiman/cloudsploit.svg)](https://registry.hub.docker.com/u/jumanjiman/cloudsploit)&nbsp;
+[![Circle CI](https://circleci.com/gh/jumanjihouse/docker-cloudsploit.png?circle-token=a597c37ea7fa23f4e9e44795a2975e76d398c771)](https://circleci.com/gh/jumanjihouse/docker-cloudsploit/tree/master 'View CI builds')
 
 Project URL: [https://github.com/jumanjihouse/docker-cloudsploit](https://github.com/jumanjihouse/docker-cloudsploit)
 <br />
