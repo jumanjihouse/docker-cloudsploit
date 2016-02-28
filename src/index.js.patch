@@ -1,5 +1,7 @@
---- scans/index.js.orig	2016-02-27 17:04:50.649922283 +0000
-+++ scans/index.js	2016-02-27 17:12:54.797459902 +0000
+diff --git a/index.js b/index.js
+index d7b31ce..ba68c99 100644
+--- a/index.js
++++ b/index.js
 @@ -1,13 +1,11 @@
  var async = require('async');
  
@@ -20,3 +22,21 @@
  
  var plugins = [
      'iam/rootAccountSecurity.js',
+@@ -27,7 +25,7 @@ var plugins = [
+     'rds/databaseSecurity.js'
+ ];
+ 
+-console.log('CATEGORY\t\tPLUGIN\t\t\t\tTEST\t\t\t\tRESOURCE\t\t\tREGION\t\tSTATUS\tMESSAGE');
++console.log('CATEGORY,PLUGIN,TEST,RESOURCE,REGION,STATUS,MESSAGE');
+ 
+ async.eachSeries(plugins, function(pluginPath, callback){
+     var plugin = require(__dirname + '/plugins/' + pluginPath);
+@@ -46,7 +44,7 @@ async.eachSeries(plugins, function(pluginPath, callback){
+                 } else {
+                     statusWord = 'UNKNOWN';
+                 }
+-                console.log(result.category + '\t\t' + result.title + '\t' + result.tests[i].title + '\t' + (result.tests[i].results[j].resource || 'N/A') + '\t' + (result.tests[i].results[j].region || 'Global') + '\t\t' + statusWord + '\t' + result.tests[i].results[j].message);
++                console.log(result.category + ',' + result.title + ',' + result.tests[i].title + ',' + (result.tests[i].results[j].resource || 'N/A') + ',' + (result.tests[i].results[j].region || 'Global') + ',' + statusWord + ',' + result.tests[i].results[j].message);
+             }
+         }
+         callback(err);
