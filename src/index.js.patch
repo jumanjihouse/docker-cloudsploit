@@ -1,9 +1,10 @@
 diff --git a/index.js b/index.js
-index d7b31ce..ba68c99 100644
+index d7b31ce..948f4db 100644
 --- a/index.js
 +++ b/index.js
-@@ -1,13 +1,11 @@
+@@ -1,13 +1,18 @@
  var async = require('async');
++var proxy = require('proxy-agent');
  
 -// var AWSConfig = {
 -//     accessKeyId: '',
@@ -11,9 +12,14 @@ index d7b31ce..ba68c99 100644
 -//     sessionToken: '',
 -//     region: 'us-east-1'
 -// };
--
++var proxy_map = {};
++if (process.env.PROXY) {
++  proxy_map = { agent: proxy(process.env.PROXY) };
++}
+ 
 -var AWSConfig = require(__dirname + '/../../cloudsploit-secure/scan-test-credentials.json');
 +var AWSConfig = {
++    httpOptions: proxy_map,
 +    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
 +    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
 +    sessionToken: process.env.AWS_SESSION_TOKEN,
@@ -22,7 +28,7 @@ index d7b31ce..ba68c99 100644
  
  var plugins = [
      'iam/rootAccountSecurity.js',
-@@ -27,7 +25,7 @@ var plugins = [
+@@ -27,7 +32,7 @@ var plugins = [
      'rds/databaseSecurity.js'
  ];
  
@@ -31,7 +37,7 @@ index d7b31ce..ba68c99 100644
  
  async.eachSeries(plugins, function(pluginPath, callback){
      var plugin = require(__dirname + '/plugins/' + pluginPath);
-@@ -46,7 +44,7 @@ async.eachSeries(plugins, function(pluginPath, callback){
+@@ -46,7 +51,7 @@ async.eachSeries(plugins, function(pluginPath, callback){
                  } else {
                      statusWord = 'UNKNOWN';
                  }

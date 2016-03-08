@@ -4,6 +4,7 @@ COPY . /
 
 RUN apk add --no-cache nodejs && \
     adduser -D user && \
+    npm install -g proxy-agent && \
     cd /scans && \
     npm install -g
 

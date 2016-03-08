@@ -56,6 +56,9 @@ Create a file `credentials.env` which contains read-only credentials:
     AWS_SECRET_ACCESS_KEY=youraccesskey
     AWS_SESSION_TOKEN=
     AWS_DEFAULT_REGION=us-west-2
+    #
+    # Optional:
+    PROXY=http://proxy.example.com:3128
 
 See [the upstream README.md](https://github.com/cloudsploit/scans#permissions)
 for details about the required read-only permissions.
